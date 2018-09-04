@@ -3,15 +3,15 @@
 FROM golang
 
 # Copy the local package files to the container's workspace.
-ADD . /go/src/sigma_test
+ADD . /go/src/go_test
 
 # Build the outyet command inside the container.
 # (You may fetch or manage dependencies here,
 # either manually or with a tool like "godep".)
-RUN go install sigma_test
+RUN go install go_test
 
 # Run the outyet command by default when the container starts.
-ENTRYPOINT /go/bin/sigma_test
+ENTRYPOINT /go/bin/go_test
 
 # Document that the service listens on port 8080.
 EXPOSE 8080
